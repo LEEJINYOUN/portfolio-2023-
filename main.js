@@ -53,17 +53,17 @@ function scrollActive() {
 
     if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
       document
-        .querySelector(".menu a[href =" + sectionId + "]")
+        .querySelector(".menu a[href *=" + sectionId + "]")
         .classList.add("active-link");
     } else {
       document
-        .querySelector(".menu a[href =" + sectionId + "]")
+        .querySelector(".menu a[href *=" + sectionId + "]")
         .classList.remove("active-link");
     }
   });
 }
 
-// window.addEventListener("scroll", scrollActive);
+window.addEventListener("scroll", scrollActive);
 
 const pages = document.querySelectorAll(".page");
 const resume = document.querySelector(".resume");
