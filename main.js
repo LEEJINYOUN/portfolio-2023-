@@ -90,3 +90,25 @@ function resumeActive() {
 }
 
 window.addEventListener("scroll", resumeActive);
+
+let filterItems = document.querySelectorAll(".portfolio_filters li");
+
+function activePortfolio() {
+  filterItems.forEach((el) => {
+    el.classList.remove("filter-active");
+    this.classList.add("filter-active");
+  });
+}
+
+filterItems.forEach((el) => {
+  el.addEventListener("click", activePortfolio);
+});
+
+let mixerPortfolio = mixitup(".portfolio_wrap-container", {
+  selectors: {
+    target: ".portfolio_item",
+  },
+  animation: {
+    duration: 300,
+  },
+});
