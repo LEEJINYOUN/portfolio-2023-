@@ -300,21 +300,18 @@
         <div class="contact_container container">
           <div class="contact_content">
             <div class="inputs">
-              <input type="text" placeholder="이름" />
-              <input type="email" placeholder="이메일" />
+              <input type="text" id="name" required placeholder="이름" />
+              <input type="email" id="email" required placeholder="이메일" />
             </div>
-            <input type="password" placeholder="비밀번호" />
+            <input type="text" id="phone" required placeholder="전화번호" />
             <textarea
-              name=""
-              id=""
+              id="message"
               cols="30"
               rows="10"
+              required
               placeholder="메세지"
             ></textarea>
-            <a href="#" class="btn"
-              >메세지 보내기
-              <ion-icon name="chevron-forward-outline"></ion-icon>
-            </a>
+            <button onclick="sendEmail()" class="btn">보내기</button>
           </div>
         </div>
       </section>
@@ -341,6 +338,15 @@
         </div>
       </footer>
     </main>
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"
+    ></script>
+    <script type="text/javascript">
+      (function () {
+        emailjs.init("vfqvlxV8xTOV1wE3N");
+      })();
+    </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/mixitup/3.3.1/mixitup.min.js"></script>
     <script
       type="module"

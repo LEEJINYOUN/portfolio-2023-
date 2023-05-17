@@ -98,3 +98,25 @@ let mixerPortfolio = mixitup(".portfolio_wrap-container", {
     duration: 300,
   },
 });
+
+function sendEmail() {
+  const name = document.querySelector("#name").value;
+  const email = document.querySelector("#email").value;
+  const phone = document.querySelector("#phone").value;
+  const message = document.querySelector("#message").value;
+  let params = {
+    name,
+    email,
+    phone,
+    message,
+  };
+  if (name === "" || email === "" || phone === "" || message === "") {
+    alert("빈칸이 있습니다. 전부 다 입력하세요.");
+  } else if (name !== "" && email !== "" && phone !== "" && message !== "") {
+    emailjs
+      .send("service_p2kirpz", "template_h1po2rg", params)
+      .then(function () {
+        alert("성공적으로 메세지를 전송했습니다.");
+      });
+  }
+}
