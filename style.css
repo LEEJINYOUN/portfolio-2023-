@@ -230,39 +230,115 @@ header .container {
 .home {
   padding-top: 114px;
   position: relative;
-  display: block;
 }
 
 .home_container {
-  align-items: center;
+  background-image: url(./imgs/home-bg.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: bottom;
+  position: relative;
+  z-index: 1;
+  height: 80vh;
 }
 
-.home_container h4 {
-  font-size: 28px;
-  font-weight: 600;
-  color: var(--main-color);
-  text-transform: uppercase;
+.home_container::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background-color: black;
+  opacity: 0.4;
+  z-index: -1;
 }
 
-.home_container h1 {
+.home_content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin: auto;
+  padding: 20px 50px;
+  max-width: 1000px;
+  width: 90%;
+  justify-content: flex-start;
+}
+
+.home_content h1 {
+  display: block;
+  width: fit-content;
   font-size: 40px;
   font-weight: 600;
   font-family: "Poppins", sans-serif;
   white-space: nowrap;
+  position: relative;
   margin-bottom: 10px;
-  color: var(--title-color);
+  color: transparent;
+  animation: text_reveal 0.5s ease forwards;
+  animation-delay: 1ss;
 }
 
-.home_container p {
-  margin: 10px 0 40px;
-  color: #333;
-  font-size: 18px;
+.home_content h1:nth-child(1) {
+  animation-delay: 1s;
+}
+
+.home_content h1:nth-child(2) {
+  animation-delay: 2s;
+}
+
+.home_content h1:nth-child(3) {
+  animation-delay: 3s;
+}
+
+.home_content h1 span {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background-color: #76a5d4;
+  animation: text_reveal_box 1s ease;
+  animation-delay: 0.5s;
+}
+
+.home_content h1:nth-child(1) span {
+  animation-delay: 0.5s;
+}
+
+.home_content h1:nth-child(2) span {
+  animation-delay: 1.5s;
+}
+
+.home_content h1:nth-child(3) span {
+  animation-delay: 2.5s;
+}
+
+@keyframes text_reveal_box {
+  50% {
+    width: 100%;
+    left: 0;
+  }
+  100% {
+    width: 0;
+    left: 100%;
+  }
+}
+
+@keyframes text_reveal {
+  100% {
+    color: white;
+  }
 }
 
 .home_container .btn {
   margin-top: 30px;
   display: inline-block;
   align-items: center;
+  color: white;
+  width: auto;
+  font-size: 20px;
 }
 
 .home_social {
