@@ -674,3 +674,64 @@ header .container {
     font-size: 16px;
   }
 }
+
+.contact {
+  padding-bottom: 60px;
+}
+
+.contact_container {
+  display: flex;
+  justify-content: center;
+}
+
+.contact_content {
+  min-width: 50%;
+  display: flex;
+  flex-direction: column;
+  padding: 0 50px;
+}
+
+.inputs {
+  display: flex;
+  justify-content: space-between;
+  column-gap: 20px;
+}
+
+input {
+  margin-bottom: 30px;
+  width: 100%;
+}
+
+input,
+textarea {
+  border-radius: 10px;
+  padding: 20px;
+  border: none;
+  outline: none;
+  background-color: #eee;
+  color: var(--title-color);
+  font-size: 16px;
+}
+
+input:focus,
+textarea:focus {
+  box-shadow: 0 0 5px #a8bbe0;
+}
+
+.contact_content .btn {
+  width: 185px;
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  column-gap: 10px;
+}
+
+@media screen and (max-width: 576px) {
+  .contact_content {
+    padding: 0;
+  }
+
+  .inputs {
+    flex-direction: column;
+  }
+}
