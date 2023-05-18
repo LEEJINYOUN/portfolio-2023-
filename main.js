@@ -100,23 +100,32 @@ let mixerPortfolio = mixitup(".portfolio_wrap-container", {
 });
 
 function sendEmail() {
-  const name = document.querySelector("#name").value;
-  const email = document.querySelector("#email").value;
-  const phone = document.querySelector("#phone").value;
-  const message = document.querySelector("#message").value;
+  let name = document.getElementById("name");
+  let email = document.getElementById("email");
+  let phone = document.getElementById("phone");
+  let message = document.getElementById("message");
   let params = {
-    name,
-    email,
-    phone,
-    message,
+    name: name.value,
+    email: email.value,
+    phone: phone.value,
+    message: message.value,
   };
-  if (name === "" || email === "" || phone === "" || message === "") {
-    alert("빈칸이 있습니다. 전부 다 입력하세요.");
-  } else if (name !== "" && email !== "" && phone !== "" && message !== "") {
+  if (
+    name.value !== "" &&
+    email.value !== "" &&
+    phone.value !== "" &&
+    message.value !== ""
+  ) {
     emailjs
       .send("service_p2kirpz", "template_h1po2rg", params)
       .then(function () {
         alert("성공적으로 메세지를 전송했습니다.");
+        name.value = "";
+        email.value = "";
+        phone.value = "";
+        message.value = "";
       });
+  } else {
+    alert("빈칸이 있습니다. 전부 다 입력하세요.");
   }
 }

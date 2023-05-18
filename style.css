@@ -32,6 +32,7 @@ body {
 
 a {
   text-decoration: none;
+  color: black;
 }
 
 a:visited {
@@ -573,34 +574,6 @@ header .container {
 .portfolio_wrap img {
   border-radius: 10px;
   height: 100%;
-}
-
-.portfolio_wrap::before {
-  content: "";
-  position: absolute;
-  top: 20px;
-  left: 20px;
-  width: 40px;
-  height: 40px;
-  background-color: transparent;
-  border-top: 3px solid rgba(0, 0, 0, 0.1);
-  border-left: 3px solid rgba(0, 0, 0, 0.1);
-  transition: 0.4s;
-  transform: scale(0);
-}
-
-.portfolio_wrap::after {
-  content: "";
-  position: absolute;
-  bottom: 20px;
-  right: 20px;
-  width: 40px;
-  height: 40px;
-  background-color: transparent;
-  border-bottom: 3px solid rgba(0, 0, 0, 0.1);
-  border-right: 3px solid rgba(0, 0, 0, 0.1);
-  transition: 0.4s;
-  transform: scale(0);
 }
 
 .portfolio_wrap:hover::before,
