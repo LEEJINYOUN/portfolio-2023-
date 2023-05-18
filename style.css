@@ -758,3 +758,41 @@ textarea:focus {
   padding: 20px 0;
   color: #fff;
 }
+
+.arrowUp {
+  position: fixed;
+  bottom: 50px;
+  right: 50px;
+  width: 65px;
+  height: 65px;
+  font-size: 35px;
+  color: white;
+  border: none;
+  background-color: rgba(128, 128, 128, 0.7);
+  border-radius: 50%;
+  opacity: 0;
+  cursor: pointer;
+  pointer-events: none;
+  transition: all 300ms ease-in;
+}
+
+.arrowUp:hover {
+  background-color: rgba(128, 128, 128, 1);
+}
+
+.arrowUp.visible {
+  opacity: 0.5;
+  pointer-events: auto;
+  z-index: 1100;
+}
+
+@media screen and (max-width: 768px) {
+  .arrowUp {
+    width: 50px;
+    height: 50px;
+    font-size: 30px;
+    line-height: 50px;
+    right: 16px;
+    bottom: 16px;
+  }
+}

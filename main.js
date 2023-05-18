@@ -129,3 +129,24 @@ function sendEmail() {
     alert("빈칸이 있습니다. 전부 다 입력하세요.");
   }
 }
+
+const home = document.querySelector("#home");
+const homeHeight = home.getBoundingClientRect().height;
+
+const arrowUp = document.querySelector(".arrowUp");
+document.addEventListener("scroll", () => {
+  if (window.scrollY > homeHeight / 3) {
+    arrowUp.classList.add("visible");
+  } else {
+    arrowUp.classList.remove("visible");
+  }
+});
+
+arrowUp.addEventListener("click", () => {
+  scrollIntoView("#home");
+});
+
+function scrollIntoView(selector) {
+  const scrollTo = document.querySelector(selector);
+  scrollTo.scrollIntoView({ behavior: "smooth" });
+}
